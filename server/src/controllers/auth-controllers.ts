@@ -28,7 +28,7 @@ export async function register(req: Request, res: Response){
     res.cookie('refreshToken', refreshToken, {
         httpOnly: true,
         sameSite: 'none',
-        secure: false, //set to true in production,
+        secure: false, 
         maxAge: 7 * 24 * 60 * 60 * 1000,
         path: "/api/auth/refresh"
     })
