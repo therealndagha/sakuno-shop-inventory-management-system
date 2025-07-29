@@ -29,3 +29,26 @@ model User {
   updatedAt DateTime @updatedAt
   refreshToken String?
 }
+
+model Product {
+
+  id String @id @default(uuid())
+  name String @unique
+  orderPrice Float
+  orderQuantity Int
+  sellingPriceOnRetail Int?
+  sellingPriceOnWholeSale Int?
+  quantityOnRetail Int?
+  quantityOnWholeSale Int?
+  profitRetail Int?
+  profitWholeSale Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  expireDate DateTime? 
+
+
+  }
+
+
+
+

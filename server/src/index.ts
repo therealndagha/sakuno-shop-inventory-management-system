@@ -3,8 +3,8 @@ import dotenv from 'dotenv';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import authRoutes from './routes/auth-routes'
-
+import authRoutes from './routes/auth-routes';
+import productRoutes from './routes/product-routes';
 
 dotenv.config();
 
@@ -18,7 +18,8 @@ app.get('/api', (req, res)=>{
     res.status(200).json({message: 'api is running...'})
 });
 
-app.use('/api/auth', authRoutes)
+app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
 const PORT = process.env.PORT || 5000;
 
